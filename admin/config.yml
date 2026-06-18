@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: felixnavidaz/felixnavidaz.github.io
+  branch: main
+
+media_folder: "assets/img/posts"
+public_folder: "/assets/img/posts"
+
+collections:
+  - name: "blog"
+    label: "Artikel Kopi"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Judul Artikel", name: "title", widget: "string" }
+      - { label: "Deskripsi Singkat", name: "description", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Isi Konten", name: "body", widget: "markdown" }
